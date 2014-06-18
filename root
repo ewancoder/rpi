@@ -1,0 +1,3 @@
+@reboot /usr/bin/screen -dmUS irssi /usr/bin/irssi
+
+@reboot /root/bin/hs

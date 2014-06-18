@@ -1,0 +1,1 @@
+/root/.irssi/scripts/autorun/xchatnickcolor.pl

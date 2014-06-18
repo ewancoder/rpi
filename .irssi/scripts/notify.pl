@@ -1,0 +1,1 @@
+/root/.irssi/scripts/autorun/notify.pl
