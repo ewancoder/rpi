@@ -1,3 +1,5 @@
-@reboot /usr/bin/screen -dmUS irssi /usr/bin/irssi
+*/10 * * * * ~/bin/backup
 
+@reboot /usr/bin/screen -dmUS irssi /usr/bin/irssi
+@reboot /usr/bin/canto-daemon -p 7070
 @reboot /root/bin/hs

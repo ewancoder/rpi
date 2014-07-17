@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if ! [ -d $(date +%d%b) ]; then
+    rsync -av --delete ~/.canto-ng ~/BACKUP/$(date +%d%b)/
+fi
