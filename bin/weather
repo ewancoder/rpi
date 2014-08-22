@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+import serial
+ser = serial.Serial('/dev/ttyUSB0', 9600)
+while True:
+    f = open('/tmp/weather', 'w')
+    f.write(ser.readline().decode('utf-8'))
+    f.close
