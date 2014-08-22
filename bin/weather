@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 import serial
+import os
 ser = serial.Serial('/dev/ttyUSB0', 9600)
 while True:
     f = open('/tmp/weather', 'w')
-    f.write(ser.readline().decode('utf-8'))
-    f.close
+    sensors = ser.readline().decode('utf-8')
+    if sensors.split()[0] != '0':
+        f.write(sensors)
+        f.close
+        os.system('if ! [ "`date +%Y`" == "1970" ]; then echo `cat /tmp/weather` `date +%m%d%Y%H%M%S` >> /root/graph.log; fi')
