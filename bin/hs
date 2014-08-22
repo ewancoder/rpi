@@ -1,14 +1,10 @@
 #!/bin/bash
 #Ensure so system is loaded
 sleep 10
-echo 17 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio17/direction
 while true; do
-    if [ -b /dev/sda1 ] && [ "$(cat /sys/class/gpio/gpio17/value)" == "0" ]; then
+    if [ -b /dev/sda1 ]; then
         mattrib -HS a:\*
-        echo 1 > /sys/class/gpio/gpio17/value
-    elif ! [ -b /dev/sda1 ]; then
-        echo 0 > /sys/class/gpio/gpio17/value
+	echo 1 > /dev/ttyUSB0
     fi
     PROC=$(ps -ef | grep "canto-daemon" | grep -v "grep" | wc -l)
     if [ $PROC -eq 0 ]; then
