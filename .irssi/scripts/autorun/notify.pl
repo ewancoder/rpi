@@ -36,7 +36,7 @@ sub notify {
     $message = sanitize($message);
 
     open(FILE, ">>/root/.irssi/notifications");
-    print FILE $summary . "Þ". $message . "\n";
+    print FILE $summary . "Þ". $message . "Þ" . $level . "Þ" . $time . "\n";
     close(FILE)
 }
 
