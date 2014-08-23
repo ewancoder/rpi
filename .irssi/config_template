@@ -211,11 +211,11 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   core = {
     real_name = "Ewan";
-    user_name = "ewancoder";
-    nick = "ewancoder";
+    user_name = "ewancoder_server";
+    nick = "ewancoder_server";
     timestamp_format = "%a-%H:%M;%S";
-    recode_fallback = "cp1251";
-    recode_out_default_charset = "cp1251";
+    recode_fallback = "utf-8";
+    recode_out_default_charset = "utf-8";
     recode_transliterate = "no";
     recode_autodetect_utf8 = "yes";
   };
