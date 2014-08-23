@@ -76,22 +76,25 @@ sub message_public_notify {
 
     our $date;
 
-    if ($target =~ "#ewancoder") {
-        if ($msg =~ m/.*$mynick.*/) {
-            notify($server, "Highlight ".$nick." > ".$target, $msg, "critical", 0);
-        } else {
-            notify($server, "Public ".$nick." > ".$target, $msg, "normal", 0);
-        }
-    } elsif ($target =~ "#twitter") {
-        my $nowdate = localtime();
-        if (not($date eq $nowdate)) {
-            notify($server, "Twitter ".$nick." > ".$target, $msg, "normal", 0);
-        }
-        $date = localtime();
+    if ($nick =~ "ewancoder") {
     } else {
-        if ($msg =~ m/.*$mynick.*/) {
-            notify($server, "Highlight ".$nick." > ".$target, $msg, "low", 0);
-        }
+	if ($target =~ "#ewancoder") {
+            if ($msg =~ m/.*$mynick.*/) {
+	        notify($server, "Highlight ".$nick." > ".$target, $msg, "critical", "0");
+	    } else {
+	        notify($server, "Public ".$nick." > ".$target, $msg, "normal", "20");
+	    }
+	} elsif ($target =~ "#twitter") {
+	    my $nowdate = localtime();
+	    if (not($date eq $nowdate)) {
+	        notify($server, "Twitter ".$nick." > ".$target, $msg, "normal", "0");
+	    }
+	    $date = localtime();
+	} else {
+	    if ($msg =~ m/.*$mynick.*/) {
+	        notify($server, "Highlight ".$nick." > ".$target, $msg, "low", "0");
+	    }
+	}
     }
 }
 
