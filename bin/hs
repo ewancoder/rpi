@@ -6,8 +6,7 @@ while true; do
         mattrib -HS a:\*
 	echo 1 > /dev/ttyUSB0
     fi
-    PROC=$(ps -ef | grep "canto-daemon" | grep -v "grep" | wc -l)
-    if [ $PROC -eq 0 ]; then
+    if [ `ps -ef | grep -v "grep" | grep "canto-daemon" | wc -l` -eq 0 ]; then
         /usr/bin/canto-daemon -p 7070 &
     fi
     sleep 3
