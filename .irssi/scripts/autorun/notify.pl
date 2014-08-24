@@ -82,7 +82,7 @@ sub message_public_notify {
             if ($msg =~ m/.*$mynick.*/) {
 	        notify($server, "Highlight ".$nick." > ".$target, $msg, "critical", "0");
 	    } else {
-	        notify($server, "Public ".$nick." > ".$target, $msg, "normal", "20");
+	        notify($server, "Public ".$nick." > ".$target, $msg, "normal", "5000");
 	    }
 	} elsif ($target =~ "#twitter") {
 	    my $nowdate = localtime();
