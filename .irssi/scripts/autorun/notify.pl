@@ -71,7 +71,8 @@ sub message_public_notify {
 
     return if (!$server);
     
-    my $mynick = $server->{nick};
+    #my $mynick = $server->{nick};
+    my $mynick = "ewancode";
     chomp $mynick;
 
     our $date;
