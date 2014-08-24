@@ -77,6 +77,7 @@ sub message_public_notify {
     our $date;
 
     if ($nick =~ "ewancoder") {
+        notify($server, "STOP", "STOP", "STOP");
     } else {
 	if ($target =~ "#ewancoder") {
             if ($msg =~ m/.*$mynick.*/) {
