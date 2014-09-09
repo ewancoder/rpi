@@ -8,4 +8,4 @@ while True:
     if sensors.split()[0] != '0':
         f.write(sensors)
         f.close
-        os.system('if ! [ "`date +%Y`" == "1970" ]; then echo `cat /tmp/weather` `date +%m%d%Y%H%M%S` >> /root/graph.log; fi')
+        os.system('if ! [ "`date +%Y`" == "1970" ]; then echo `cat /tmp/weather` `date +%m%d%Y%H%M%S` >> /root/graph-`date +%Y%m%d`.log; fi')

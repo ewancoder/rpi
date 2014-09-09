@@ -211,8 +211,8 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   core = {
     real_name = "Ewan";
-    user_name = "ewancoder_server";
-    nick = "ewancoder_server";
+    user_name = "ewancoder";
+    nick = "ewancoder";
     timestamp_format = "%a-%H:%M;%S";
     recode_fallback = "utf-8";
     recode_out_default_charset = "utf-8";
