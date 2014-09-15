@@ -7,7 +7,7 @@ while true; do
 	echo 1 > /dev/ttyUSB0
     fi
     if [ `ps -ef | grep -v "grep" | grep "canto-daemon" | wc -l` -eq 0 ]; then
-        /usr/bin/canto-daemon -v -a 127.0.0.1 -p 7070 &
+        /usr/bin/canto-daemon -v -p 7070 &
     fi
     sleep 3
 done
