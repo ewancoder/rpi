@@ -31,8 +31,6 @@ system.method.set_key = event.download.finished,notify_me,"execute=~/bin/tnotify
 schedule = throttle_1,04:00:00,24:00:00,download_rate=0
 schedule = throttle_2,07:00:00,24:00:00,download_rate=400
 
-
-
 #Downloading directory
 directory = /mnt/data/Downloading
 #Session directory
@@ -53,21 +51,5 @@ dht = auto
 dht_port = 6881
 peer_exchange = yes
 
-# The ip address reported to the tracker.
-#ip = 127.0.0.1
-#ip = rakshasa.no
-
-# The ip address the listening socket and outgoing connections is
-# bound to.
-#bind = 127.0.0.1
-#bind = rakshasa.no
-
-# Start opening ports at a random position within the port range.
-#port_random = no
-
-# Set whether the client should try to connect to UDP trackers.
-#use_udp_trackers = yes
-
-# Alternative calls to bind and ip that should handle dynamic ip's.
-#schedule = ip_tick,0,1800,ip=rakshasa
-#schedule = bind_tick,0,1800,bind=rakshasa
+#I guess I need it
+use_udp_trackers = yes
