@@ -1,0 +1,73 @@
+#For right non-ascii characters in filenames
+encoding_list = UTF-8
+#XML-RPC port to use with nginx
+scgi_port = localhost:5000
+
+#Max upload/download global speed (KiB)
+download_rate = 400
+upload_rate = 150
+
+#Peers to connect to per torrent
+min_peers = 40
+max_peers = 200
+
+#Same but for seeding (-1 = same as downloading)
+min_peers_seed = -1
+max_peers_seed = -1
+
+#Max simultaneous uploads per torrent
+max_uploads = 26
+
+#Port range for listening.
+port_range = 49164-49164
+
+#After download, recheck hash
+check_hash = yes
+
+#Notify about completed torrents
+system.method.set_key = event.download.finished,notify_me,"execute=~/bin/tnotify"
+
+#Schedule download rate after 4 and before 7
+schedule = throttle_1,04:00:00,24:00:00,download_rate=0
+schedule = throttle_2,07:00:00,24:00:00,download_rate=400
+
+
+
+#Downloading directory
+directory = /mnt/data/Downloading
+#Session directory
+session = /mnt/data/.session
+#Watch torrents in this folder, restart and stop moved/deleted
+schedule = watch_directory,5,5,load_start=/root/*.torrent
+schedule = untied_directory,5,5,stop_untied=
+schedule = tied_directory,5,5,start_tied=
+
+#Move completed to Completed folder
+system.method.set_key = event.download.finished,move_complete,"execute=mv,-u,$d.get_base_path=,/mnt/data/Completed/;d.set_directory=/mnt/data/Completed/"
+
+#Try encryption, better with it :)
+encryption = allow_incoming,try_outgoing,enable_retry
+
+#DHT support
+dht = auto
+dht_port = 6881
+peer_exchange = yes
+
+# The ip address reported to the tracker.
+#ip = 127.0.0.1
+#ip = rakshasa.no
+
+# The ip address the listening socket and outgoing connections is
+# bound to.
+#bind = 127.0.0.1
+#bind = rakshasa.no
+
+# Start opening ports at a random position within the port range.
+#port_random = no
+
+# Set whether the client should try to connect to UDP trackers.
+#use_udp_trackers = yes
+
+# Alternative calls to bind and ip that should handle dynamic ip's.
+#schedule = ip_tick,0,1800,ip=rakshasa
+#schedule = bind_tick,0,1800,bind=rakshasa
