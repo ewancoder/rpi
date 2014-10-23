@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "RtorrentÞ$(date) : $1 - Download completed.ÞcriticalÞ0" >> ~/.irssi/notifications
+echo "DelugeÞCompleted #$1 - $2ÞcriticalÞ0" >> ~/.irssi/notifications
