@@ -1,7 +1,7 @@
 #For right non-ascii characters in filenames
 encoding_list = UTF-8
 #XML-RPC port to use with nginx
-scgi_port = localhost:5000
+scgi_port = 127.0.0.1:5000
 
 #Max upload/download global speed (KiB)
 download_rate = 400
